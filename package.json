@@ -24,6 +24,7 @@
   "author": "Nick DeRobertis <whoopnip@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "moment": "^2.25.3",
     "ramda": "^0.26.1",
     "react-keyed-file-browser": "^1.8.0"
   },
