@@ -1,0 +1,20 @@
+{
+    "template": "https://github.com/plotly/dash-component-boilerplate.git",
+    "commit": "86b9494463e028774429a8faa08391b6caf1611d",
+    "context": {
+        "cookiecutter": {
+            "project_name": "Dash Keyed File Browser",
+            "project_shortname": "dash_keyed_file_browser",
+            "component_name": "KeyedFileBrowser",
+            "r_prefix": "dkfb",
+            "author_name": "Nick DeRobertis",
+            "author_email": "whoopnip@gmail.com",
+            "github_org": "nickderobertis",
+            "description": "Dash Component for react-keyed-file-browser",
+            "license": "MIT License",
+            "publish_on_npm": "True",
+            "install_dependencies": "True",
+            "_template": "https://github.com/plotly/dash-component-boilerplate.git"
+        }
+    }
+}

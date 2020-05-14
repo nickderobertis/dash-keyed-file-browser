@@ -1,0 +1,7 @@
+include dash_keyed_file_browser/dash_keyed_file_browser.min.js
+include dash_keyed_file_browser/dash_keyed_file_browser.min.js.map
+include dash_keyed_file_browser/metadata.json
+include dash_keyed_file_browser/package-info.json
+include README.md
+include LICENSE
+include package.json

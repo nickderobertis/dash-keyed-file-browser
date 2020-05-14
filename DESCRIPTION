@@ -1,0 +1,13 @@
+Package: dashKeyedFileBrowser
+Title: Dash Component for react-keyed-file-browser
+Version: 0.0.1
+Description: Dash Component for react-keyed-file-browser
+Depends: R (>= 3.0.2)
+Imports: 
+Suggests: 
+License: MIT + file LICENSE
+URL: https://github.com/nickderobertis/dash-keyed-file-browser
+BugReports: https://github.com/nickderobertis/dash-keyed-file-browser/issues
+Encoding: UTF-8
+LazyData: true
+KeepSource: true
