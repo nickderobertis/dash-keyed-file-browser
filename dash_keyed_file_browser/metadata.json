@@ -50,35 +50,55 @@
           "name": "bool"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       },
       "canFilter": {
         "type": {
           "name": "bool"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
       },
       "noFilesMessage": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "'No files.'",
+          "computed": false
+        }
       },
       "group": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "Groupers.GroupByFolder",
+          "computed": true
+        }
       },
       "sort": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "Sorters.SortByName",
+          "computed": true
+        }
       },
       "icons": {
         "type": {
@@ -123,14 +143,22 @@
           }
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "nestChildren": {
         "type": {
           "name": "bool"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       },
       "renderStyle": {
         "type": {
@@ -147,105 +175,165 @@
           ]
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "'table'",
+          "computed": false
+        }
       },
       "startOpen": {
         "type": {
           "name": "bool"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
       },
       "headerRenderer": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "Headers.TableHeader",
+          "computed": true
+        }
       },
       "headerRendererProps": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "filterRenderer": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "Filters.DefaultFilter",
+          "computed": true
+        }
       },
       "filterRendererProps": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "fileRenderer": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "FileRenderers.TableFile",
+          "computed": true
+        }
       },
       "fileRendererProps": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "folderRenderer": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "FolderRenderers.TableFolder",
+          "computed": true
+        }
       },
       "folderRendererProps": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "detailRenderer": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "Details.DefaultDetail",
+          "computed": true
+        }
       },
       "detailRendererProps": {
         "type": {
           "name": "object"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
       },
       "actionRenderer": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "DefaultAction",
+          "computed": true
+        }
       },
       "confirmDeletionRenderer": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "DefaultConfirmDeletion",
+          "computed": true
+        }
       },
       "confirmMultipleDeletionRenderer": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "MultipleConfirmDeletion",
+          "computed": true
+        }
       },
       "onCreateFiles": {
         "type": {
@@ -387,49 +475,77 @@
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "(fileOrFolder) => {}",
+          "computed": false
+        }
       },
       "onSelectFile": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "(file) => {}",
+          "computed": false
+        }
       },
       "onSelectFolder": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "(folder) => {}",
+          "computed": false
+        }
       },
       "onPreviewOpen": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "(file) => {}",
+          "computed": false
+        }
       },
       "onPreviewClose": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "(file) => {}",
+          "computed": false
+        }
       },
       "onFolderOpen": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "(folder) => {}",
+          "computed": false
+        }
       },
       "onFolderClose": {
         "type": {
           "name": "func"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "(folder) => {}",
+          "computed": false
+        }
       }
     }
   }

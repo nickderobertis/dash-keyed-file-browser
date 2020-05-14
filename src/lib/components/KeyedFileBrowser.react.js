@@ -1,7 +1,18 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {omit} from 'ramda';
-import FileBrowser from 'react-keyed-file-browser';
+import FileBrowser, {
+    Headers,
+    FileRenderers,
+    FolderRenderers,
+    Details,
+    Filters,
+    Groupers,
+    Sorters,
+    DefaultAction,
+    DefaultConfirmDeletion,
+    MultipleConfirmDeletion,
+} from 'react-keyed-file-browser';
 
 /**
  * ExampleComponent is an example component.
@@ -28,6 +39,7 @@ export default class KeyedFileBrowser extends Component {
         return (
             <div id={id}>
                 <p>Component works</p>
+                <p>{JSON.stringify(this.props)}</p>
                 <FileBrowser
                     onChange={this.handleChange}
                     {...omit(['setProps'], this.props)}
@@ -41,12 +53,51 @@ export default class KeyedFileBrowser extends Component {
         //             {...omit(['setProps'], this.props)}
         //         />
         //         <p>Component works</p>
+        //         <p>{JSON.stringify(this.props)}</p>
         //     </div>
         // );
     }
 }
 
-KeyedFileBrowser.defaultProps = FileBrowser.defaultProps;
+KeyedFileBrowser.defaultProps = {
+    showActionBar: true,
+    canFilter: true,
+    noFilesMessage: 'No files.',
+
+    group: Groupers.GroupByFolder,
+    sort: Sorters.SortByName,
+
+    nestChildren: false,
+    renderStyle: 'table',
+
+    startOpen: false,
+
+    headerRenderer: Headers.TableHeader,
+    headerRendererProps: {},
+    filterRenderer: Filters.DefaultFilter,
+    filterRendererProps: {},
+    fileRenderer: FileRenderers.TableFile,
+    fileRendererProps: {},
+    folderRenderer: FolderRenderers.TableFolder,
+    folderRendererProps: {},
+    detailRenderer: Details.DefaultDetail,
+    detailRendererProps: {},
+    actionRenderer: DefaultAction,
+    confirmDeletionRenderer: DefaultConfirmDeletion,
+    confirmMultipleDeletionRenderer: MultipleConfirmDeletion,
+
+    icons: {},
+
+    onSelect: (fileOrFolder) => {}, // Always called when a file or folder is selected
+    onSelectFile: (file) => {}, //    Called after onSelect, only on file selection
+    onSelectFolder: (folder) => {}, //    Called after onSelect, only on folder selection
+
+    onPreviewOpen: (file) => {}, // File opened
+    onPreviewClose: (file) => {}, // File closed
+
+    onFolderOpen: (folder) => {}, // Folder opened
+    onFolderClose: (folder) => {}, // Folder closed
+};
 
 /**
  * Was not working until I copied the propTypes rather than referenced them
