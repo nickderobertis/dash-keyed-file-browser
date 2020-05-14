@@ -11,21 +11,11 @@ ExampleComponent is an example component. It takes a property, `label`, and disp
 
 \usage{
 dkfbKeyedFileBrowser(files=NULL, id=NULL, actions=NULL, showActionBar=NULL,
-canFilter=NULL, noFilesMessage=NULL, group=NULL, sort=NULL,
-icons=NULL, nestChildren=NULL, renderStyle=NULL,
-startOpen=NULL, headerRenderer=NULL,
-headerRendererProps=NULL, filterRenderer=NULL,
-filterRendererProps=NULL, fileRenderer=NULL,
-fileRendererProps=NULL, folderRenderer=NULL,
-folderRendererProps=NULL, detailRenderer=NULL,
-detailRendererProps=NULL, actionRenderer=NULL,
-confirmDeletionRenderer=NULL,
-confirmMultipleDeletionRenderer=NULL, onCreateFiles=NULL,
-onCreateFolder=NULL, onMoveFile=NULL, onMoveFolder=NULL,
-onRenameFile=NULL, onRenameFolder=NULL, onDeleteFile=NULL,
-onDeleteFolder=NULL, onDownloadFile=NULL, onSelect=NULL,
-onSelectFile=NULL, onSelectFolder=NULL, onPreviewOpen=NULL,
-onPreviewClose=NULL, onFolderOpen=NULL, onFolderClose=NULL)
+canFilter=NULL, noFilesMessage=NULL, icons=NULL,
+nestChildren=NULL, renderStyle=NULL, startOpen=NULL,
+headerRendererProps=NULL, filterRendererProps=NULL,
+fileRendererProps=NULL, folderRendererProps=NULL,
+detailRendererProps=NULL)
 }
 
 \arguments{
@@ -40,10 +30,6 @@ onPreviewClose=NULL, onFolderOpen=NULL, onFolderClose=NULL)
 \item{canFilter}{Logical. }
 
 \item{noFilesMessage}{Character. }
-
-\item{group}{}
-
-\item{sort}{}
 
 \item{icons}{Lists containing elements 'folder', 'folderopen', 'file', 'pdf', 'image', 'delete', 'rename', 'loading', 'download'.
 those elements have the following types:
@@ -63,63 +49,15 @@ those elements have the following types:
 
 \item{startOpen}{Logical. }
 
-\item{headerRenderer}{}
-
 \item{headerRendererProps}{Named list. }
-
-\item{filterRenderer}{}
 
 \item{filterRendererProps}{Named list. }
 
-\item{fileRenderer}{}
-
 \item{fileRendererProps}{Named list. }
-
-\item{folderRenderer}{}
 
 \item{folderRendererProps}{Named list. }
 
-\item{detailRenderer}{}
-
 \item{detailRendererProps}{Named list. }
-
-\item{actionRenderer}{}
-
-\item{confirmDeletionRenderer}{}
-
-\item{confirmMultipleDeletionRenderer}{}
-
-\item{onCreateFiles}{Logical. }
-
-\item{onCreateFolder}{Logical. }
-
-\item{onMoveFile}{Logical. }
-
-\item{onMoveFolder}{Logical. }
-
-\item{onRenameFile}{Logical. }
-
-\item{onRenameFolder}{Logical. }
-
-\item{onDeleteFile}{Logical. }
-
-\item{onDeleteFolder}{Logical. }
-
-\item{onDownloadFile}{Logical. }
-
-\item{onSelect}{}
-
-\item{onSelectFile}{}
-
-\item{onSelectFolder}{}
-
-\item{onPreviewOpen}{}
-
-\item{onPreviewClose}{}
-
-\item{onFolderOpen}{}
-
-\item{onFolderClose}{}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

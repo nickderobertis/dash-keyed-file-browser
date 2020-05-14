@@ -14,6 +14,39 @@ import FileBrowser, {
     MultipleConfirmDeletion,
 } from 'react-keyed-file-browser';
 
+const defaultFuncProps = {
+    headerRenderer: Headers.TableHeader,
+    filterRenderer: Filters.DefaultFilter,
+    fileRenderer: FileRenderers.TableFile,
+    folderRenderer: FolderRenderers.TableFolder,
+    detailRenderer: Details.DefaultDetail,
+    actionRenderer: DefaultAction,
+    confirmDeletionRenderer: DefaultConfirmDeletion,
+    confirmMultipleDeletionRenderer: MultipleConfirmDeletion,
+    group: Groupers.GroupByFolder,
+    sort: Sorters.SortByName,
+
+    onSelect: (fileOrFolder) => {}, // Always called when a file or folder is selected
+    onSelectFile: (file) => {}, //    Called after onSelect, only on file selection
+    onSelectFolder: (folder) => {}, //    Called after onSelect, only on folder selection
+
+    onPreviewOpen: (file) => {}, // File opened
+    onPreviewClose: (file) => {}, // File closed
+
+    onFolderOpen: (folder) => {}, // Folder opened
+    onFolderClose: (folder) => {}, // Folder closed
+
+    onCreateFiles: false,
+    onCreateFolder: false,
+    onMoveFile: false,
+    onMoveFolder: false,
+    onRenameFile: false,
+    onRenameFolder: false,
+    onDeleteFile: false,
+    onDeleteFolder: false,
+    onDownloadFile: false,
+};
+
 /**
  * ExampleComponent is an example component.
  * It takes a property, `label`, and
@@ -42,6 +75,7 @@ export default class KeyedFileBrowser extends Component {
                 <p>{JSON.stringify(this.props)}</p>
                 <FileBrowser
                     onChange={this.handleChange}
+                    {...defaultFuncProps}
                     {...omit(['setProps'], this.props)}
                 />
             </div>
@@ -64,39 +98,18 @@ KeyedFileBrowser.defaultProps = {
     canFilter: true,
     noFilesMessage: 'No files.',
 
-    group: Groupers.GroupByFolder,
-    sort: Sorters.SortByName,
-
     nestChildren: false,
     renderStyle: 'table',
 
     startOpen: false,
 
-    headerRenderer: Headers.TableHeader,
     headerRendererProps: {},
-    filterRenderer: Filters.DefaultFilter,
     filterRendererProps: {},
-    fileRenderer: FileRenderers.TableFile,
     fileRendererProps: {},
-    folderRenderer: FolderRenderers.TableFolder,
     folderRendererProps: {},
-    detailRenderer: Details.DefaultDetail,
     detailRendererProps: {},
-    actionRenderer: DefaultAction,
-    confirmDeletionRenderer: DefaultConfirmDeletion,
-    confirmMultipleDeletionRenderer: MultipleConfirmDeletion,
 
     icons: {},
-
-    onSelect: (fileOrFolder) => {}, // Always called when a file or folder is selected
-    onSelectFile: (file) => {}, //    Called after onSelect, only on file selection
-    onSelectFolder: (folder) => {}, //    Called after onSelect, only on folder selection
-
-    onPreviewOpen: (file) => {}, // File opened
-    onPreviewClose: (file) => {}, // File closed
-
-    onFolderOpen: (folder) => {}, // Folder opened
-    onFolderClose: (folder) => {}, // Folder closed
 };
 
 /**
@@ -117,9 +130,6 @@ KeyedFileBrowser.propTypes = {
     canFilter: PropTypes.bool,
     noFilesMessage: PropTypes.string,
 
-    group: PropTypes.func,
-    sort: PropTypes.func,
-
     icons: PropTypes.shape({
         Folder: PropTypes.element,
         FolderOpen: PropTypes.element,
@@ -137,37 +147,9 @@ KeyedFileBrowser.propTypes = {
 
     startOpen: PropTypes.bool,
 
-    headerRenderer: PropTypes.func,
     headerRendererProps: PropTypes.object,
-    filterRenderer: PropTypes.func,
     filterRendererProps: PropTypes.object,
-    fileRenderer: PropTypes.func,
     fileRendererProps: PropTypes.object,
-    folderRenderer: PropTypes.func,
     folderRendererProps: PropTypes.object,
-    detailRenderer: PropTypes.func,
     detailRendererProps: PropTypes.object,
-    actionRenderer: PropTypes.func,
-    confirmDeletionRenderer: PropTypes.func,
-    confirmMultipleDeletionRenderer: PropTypes.func,
-
-    onCreateFiles: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    onCreateFolder: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    onMoveFile: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    onMoveFolder: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    onRenameFile: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    onRenameFolder: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    onDeleteFile: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    onDeleteFolder: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    onDownloadFile: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-
-    onSelect: PropTypes.func,
-    onSelectFile: PropTypes.func,
-    onSelectFolder: PropTypes.func,
-
-    onPreviewOpen: PropTypes.func,
-    onPreviewClose: PropTypes.func,
-
-    onFolderOpen: PropTypes.func,
-    onFolderClose: PropTypes.func,
 };
