@@ -5,13 +5,7 @@ import dash_html_components as html
 
 NUM_UPDATES = 0
 
-app = dash.Dash(
-    __name__,
-    show_undo_redo=True,
-    external_stylesheets=[
-        "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
-    ],
-)
+app = dash.Dash(__name__, show_undo_redo=True,)
 
 EXAMPLE_FILES = [
     {"key": "photos/animals/cat in a hat.png", "size": 1.5 * 1024 * 1024,},
