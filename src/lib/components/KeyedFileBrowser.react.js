@@ -12,6 +12,7 @@ import FileBrowser, {
     DefaultAction,
     DefaultConfirmDeletion,
     MultipleConfirmDeletion,
+    Icons,
 } from 'react-keyed-file-browser';
 
 const defaultFuncProps = {
@@ -183,7 +184,7 @@ export default class KeyedFileBrowser extends Component {
                 <p>{JSON.stringify(this.props)}</p>
                 <FileBrowser
                     files={this.state.files}
-                    onChange={this.handleChange}
+                    icons={Icons.FontAwesome(4)}
                     {...defaultFuncProps}
                     {...omit(['setProps', 'files'], this.props)}
                     onCreateFolder={this.handleCreateFolder}
@@ -215,8 +216,6 @@ KeyedFileBrowser.defaultProps = {
     fileRendererProps: {},
     folderRendererProps: {},
     detailRendererProps: {},
-
-    icons: {},
 };
 
 /**
@@ -236,18 +235,6 @@ KeyedFileBrowser.propTypes = {
     showActionBar: PropTypes.bool,
     canFilter: PropTypes.bool,
     noFilesMessage: PropTypes.string,
-
-    icons: PropTypes.shape({
-        Folder: PropTypes.element,
-        FolderOpen: PropTypes.element,
-        File: PropTypes.element,
-        PDF: PropTypes.element,
-        Image: PropTypes.element,
-        Delete: PropTypes.element,
-        Rename: PropTypes.element,
-        Loading: PropTypes.element,
-        Download: PropTypes.element,
-    }),
 
     nestChildren: PropTypes.bool,
     renderStyle: PropTypes.oneOf(['list', 'table']),

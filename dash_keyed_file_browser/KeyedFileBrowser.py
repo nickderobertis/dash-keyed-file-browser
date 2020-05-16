@@ -18,17 +18,6 @@ Keyword arguments:
 - showActionBar (boolean; default True)
 - canFilter (boolean; default True)
 - noFilesMessage (string; default 'No files.')
-- icons (dict; optional): icons has the following type: dict containing keys 'Folder', 'FolderOpen', 'File', 'PDF', 'Image', 'Delete', 'Rename', 'Loading', 'Download'.
-Those keys have the following types:
-  - Folder (dash component; optional)
-  - FolderOpen (dash component; optional)
-  - File (dash component; optional)
-  - PDF (dash component; optional)
-  - Image (dash component; optional)
-  - Delete (dash component; optional)
-  - Rename (dash component; optional)
-  - Loading (dash component; optional)
-  - Download (dash component; optional)
 - nestChildren (boolean; default False)
 - renderStyle (a value equal to: 'list', 'table'; default 'table')
 - startOpen (boolean; default False)
@@ -38,12 +27,12 @@ Those keys have the following types:
 - folderRendererProps (dict; optional)
 - detailRendererProps (dict; optional)"""
     @_explicitize_args
-    def __init__(self, files=Component.REQUIRED, id=Component.UNDEFINED, actions=Component.UNDEFINED, showActionBar=Component.UNDEFINED, canFilter=Component.UNDEFINED, noFilesMessage=Component.UNDEFINED, icons=Component.UNDEFINED, nestChildren=Component.UNDEFINED, renderStyle=Component.UNDEFINED, startOpen=Component.UNDEFINED, headerRendererProps=Component.UNDEFINED, filterRendererProps=Component.UNDEFINED, fileRendererProps=Component.UNDEFINED, folderRendererProps=Component.UNDEFINED, detailRendererProps=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['files', 'id', 'actions', 'showActionBar', 'canFilter', 'noFilesMessage', 'icons', 'nestChildren', 'renderStyle', 'startOpen', 'headerRendererProps', 'filterRendererProps', 'fileRendererProps', 'folderRendererProps', 'detailRendererProps']
+    def __init__(self, files=Component.REQUIRED, id=Component.UNDEFINED, actions=Component.UNDEFINED, showActionBar=Component.UNDEFINED, canFilter=Component.UNDEFINED, noFilesMessage=Component.UNDEFINED, nestChildren=Component.UNDEFINED, renderStyle=Component.UNDEFINED, startOpen=Component.UNDEFINED, headerRendererProps=Component.UNDEFINED, filterRendererProps=Component.UNDEFINED, fileRendererProps=Component.UNDEFINED, folderRendererProps=Component.UNDEFINED, detailRendererProps=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['files', 'id', 'actions', 'showActionBar', 'canFilter', 'noFilesMessage', 'nestChildren', 'renderStyle', 'startOpen', 'headerRendererProps', 'filterRendererProps', 'fileRendererProps', 'folderRendererProps', 'detailRendererProps']
         self._type = 'KeyedFileBrowser'
         self._namespace = 'dash_keyed_file_browser'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['files', 'id', 'actions', 'showActionBar', 'canFilter', 'noFilesMessage', 'icons', 'nestChildren', 'renderStyle', 'startOpen', 'headerRendererProps', 'filterRendererProps', 'fileRendererProps', 'folderRendererProps', 'detailRendererProps']
+        self.available_properties = ['files', 'id', 'actions', 'showActionBar', 'canFilter', 'noFilesMessage', 'nestChildren', 'renderStyle', 'startOpen', 'headerRendererProps', 'filterRendererProps', 'fileRendererProps', 'folderRendererProps', 'detailRendererProps']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

@@ -11,11 +11,10 @@ ExampleComponent is an example component. It takes a property, `label`, and disp
 
 \usage{
 dkfbKeyedFileBrowser(files=NULL, id=NULL, actions=NULL, showActionBar=NULL,
-canFilter=NULL, noFilesMessage=NULL, icons=NULL,
-nestChildren=NULL, renderStyle=NULL, startOpen=NULL,
-headerRendererProps=NULL, filterRendererProps=NULL,
-fileRendererProps=NULL, folderRendererProps=NULL,
-detailRendererProps=NULL)
+canFilter=NULL, noFilesMessage=NULL, nestChildren=NULL,
+renderStyle=NULL, startOpen=NULL, headerRendererProps=NULL,
+filterRendererProps=NULL, fileRendererProps=NULL,
+folderRendererProps=NULL, detailRendererProps=NULL)
 }
 
 \arguments{
@@ -30,18 +29,6 @@ detailRendererProps=NULL)
 \item{canFilter}{Logical. }
 
 \item{noFilesMessage}{Character. }
-
-\item{icons}{Lists containing elements 'folder', 'folderopen', 'file', 'pdf', 'image', 'delete', 'rename', 'loading', 'download'.
-those elements have the following types:
-  - folder (dash component; optional)
-  - folderopen (dash component; optional)
-  - file (dash component; optional)
-  - pdf (dash component; optional)
-  - image (dash component; optional)
-  - delete (dash component; optional)
-  - rename (dash component; optional)
-  - loading (dash component; optional)
-  - download (dash component; optional). }
 
 \item{nestChildren}{Logical. }
 

@@ -162,55 +162,6 @@
           "computed": false
         }
       },
-      "icons": {
-        "type": {
-          "name": "shape",
-          "value": {
-            "Folder": {
-              "name": "element",
-              "required": false
-            },
-            "FolderOpen": {
-              "name": "element",
-              "required": false
-            },
-            "File": {
-              "name": "element",
-              "required": false
-            },
-            "PDF": {
-              "name": "element",
-              "required": false
-            },
-            "Image": {
-              "name": "element",
-              "required": false
-            },
-            "Delete": {
-              "name": "element",
-              "required": false
-            },
-            "Rename": {
-              "name": "element",
-              "required": false
-            },
-            "Loading": {
-              "name": "element",
-              "required": false
-            },
-            "Download": {
-              "name": "element",
-              "required": false
-            }
-          }
-        },
-        "required": false,
-        "description": "",
-        "defaultValue": {
-          "value": "{}",
-          "computed": false
-        }
-      },
       "nestChildren": {
         "type": {
           "name": "bool"
