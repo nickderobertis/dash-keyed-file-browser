@@ -52,6 +52,12 @@ export default class KeyedFileBrowser extends Component {
         super(props);
     }
 
+    static getDerivedStateFromProps(nextProps, prevState) {
+        return {
+            files: nextProps.files,
+        };
+    }
+
     setFiles(files) {
         this.props.setProps({files: files});
     }
@@ -172,7 +178,6 @@ export default class KeyedFileBrowser extends Component {
     };
 
     handleSelectFile = (file) => {
-        console.log('handling selected file');
         this.props.setProps({selectedFile: file});
     };
 
