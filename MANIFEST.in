@@ -2,6 +2,22 @@ include dash_keyed_file_browser/dash_keyed_file_browser.min.js
 include dash_keyed_file_browser/dash_keyed_file_browser.min.js.map
 include dash_keyed_file_browser/metadata.json
 include dash_keyed_file_browser/package-info.json
+include dash_keyed_file_browser/0b385b9-main-wps-hmr.js
+include dash_keyed_file_browser/0b385b9-wps-hmr.json
+include dash_keyed_file_browser/238d51e-main-wps-hmr.js
+include dash_keyed_file_browser/238d51e-wps-hmr.json
+include dash_keyed_file_browser/246113f-main-wps-hmr.js
+include dash_keyed_file_browser/246113f-wps-hmr.json
+include dash_keyed_file_browser/7149984-main-wps-hmr.js
+include dash_keyed_file_browser/7149984-wps-hmr.json
+include dash_keyed_file_browser/c66101c-main-wps-hmr.js
+include dash_keyed_file_browser/c66101c-wps-hmr.json
+include dash_keyed_file_browser/d4d53c7-main-wps-hmr.js
+include dash_keyed_file_browser/d4d53c7-wps-hmr.json
+include dash_keyed_file_browser/font-awesome.min.css
+include dash_keyed_file_browser/output.js
+include dash_keyed_file_browser/react-keyed-file-browser.css
+
 include README.md
 include LICENSE
 include package.json
