@@ -3,6 +3,8 @@ import dash
 from dash.dependencies import Input, Output
 import dash_html_components as html
 
+NUM_UPDATES = 0
+
 app = dash.Dash(__name__, show_undo_redo=True)
 
 EXAMPLE_FILES = [
@@ -23,9 +25,11 @@ app.layout = html.Div(
 )
 
 
-# @app.callback(Output("output", "children"), [Input("input", "value")])
-# def display_output(value):
-#     return "You have entered {}".format(value)
+@app.callback(Output("output", "children"), [Input("kfb", "files")])
+def display_output(value):
+    global NUM_UPDATES
+    NUM_UPDATES += 1
+    return f"Updated {NUM_UPDATES} times. Files are {value}"
 
 
 if __name__ == "__main__":

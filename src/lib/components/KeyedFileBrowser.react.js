@@ -36,14 +36,6 @@ const defaultFuncProps = {
     onFolderOpen: (folder) => {}, // Folder opened
     onFolderClose: (folder) => {}, // Folder closed
 
-    onCreateFiles: false,
-    onCreateFolder: false,
-    onMoveFile: false,
-    onMoveFolder: false,
-    onRenameFile: false,
-    onRenameFolder: false,
-    onDeleteFile: false,
-    onDeleteFolder: false,
     onDownloadFile: false,
 };
 
@@ -55,16 +47,132 @@ const defaultFuncProps = {
  * which is editable by the user.
  */
 export default class KeyedFileBrowser extends Component {
+    state = {
+        files: this.props.files,
+    };
+
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    // Bind to Dash event handler that puts event back into props
-    handleChange(event) {
-        console.log(event);
-        // this.props.setProps({});
+    setFiles(files) {
+        this.props.setProps({files: files});
     }
+
+    handleCreateFolder = (key) => {
+        this.setState((state) => {
+            const newFiles = state.files.concat([
+                {
+                    key: key,
+                },
+            ]);
+            state.files = newFiles;
+            this.setFiles(newFiles);
+            return state;
+        });
+    };
+
+    handleCreateFiles = (files, prefix) => {
+        this.setState((state) => {
+            const newFiles = files.map((file) => {
+                let newKey = prefix;
+                if (
+                    prefix !== '' &&
+                    prefix.substring(prefix.length - 1, prefix.length) !== '/'
+                ) {
+                    newKey += '/';
+                }
+                newKey += file.name;
+                return {
+                    key: newKey,
+                    size: file.size,
+                };
+            });
+
+            const uniqueNewFiles = [];
+            newFiles.map((newFile) => {
+                let exists = false;
+                state.files.map((existingFile) => {
+                    if (existingFile.key === newFile.key) {
+                        exists = true;
+                    }
+                });
+                if (!exists) {
+                    uniqueNewFiles.push(newFile);
+                }
+            });
+            const replaceFiles = state.files.concat(uniqueNewFiles);
+            state.files = replaceFiles;
+            this.setFiles(replaceFiles);
+            return state;
+        });
+    };
+
+    handleRenameFolder = (oldKey, newKey) => {
+        this.setState((state) => {
+            const newFiles = [];
+            state.files.map((file) => {
+                if (file.key.substr(0, oldKey.length) === oldKey) {
+                    newFiles.push({
+                        ...file,
+                        key: file.key.replace(oldKey, newKey),
+                    });
+                } else {
+                    newFiles.push(file);
+                }
+            });
+            state.files = newFiles;
+            this.setFiles(newFiles);
+            return state;
+        });
+    };
+
+    handleRenameFile = (oldKey, newKey) => {
+        this.setState((state) => {
+            const newFiles = [];
+            state.files.map((file) => {
+                if (file.key === oldKey) {
+                    newFiles.push({
+                        ...file,
+                        key: newKey,
+                    });
+                } else {
+                    newFiles.push(file);
+                }
+            });
+            state.files = newFiles;
+            this.setFiles(newFiles);
+            return state;
+        });
+    };
+
+    handleDeleteFolder = (folderKey) => {
+        this.setState((state) => {
+            const newFiles = [];
+            state.files.map((file) => {
+                if (file.key.substr(0, folderKey.length) !== folderKey) {
+                    newFiles.push(file);
+                }
+            });
+            state.files = newFiles;
+            this.setFiles(newFiles);
+            return state;
+        });
+    };
+
+    handleDeleteFile = (fileKey) => {
+        this.setState((state) => {
+            const newFiles = [];
+            state.files.map((file) => {
+                if (file.key !== fileKey) {
+                    newFiles.push(file);
+                }
+            });
+            state.files = newFiles;
+            this.setFiles(newFiles);
+            return state;
+        });
+    };
 
     render() {
         const {id} = this.props;
@@ -74,22 +182,21 @@ export default class KeyedFileBrowser extends Component {
                 <p>Component works</p>
                 <p>{JSON.stringify(this.props)}</p>
                 <FileBrowser
+                    files={this.state.files}
                     onChange={this.handleChange}
                     {...defaultFuncProps}
-                    {...omit(['setProps'], this.props)}
+                    {...omit(['setProps', 'files'], this.props)}
+                    onCreateFolder={this.handleCreateFolder}
+                    onCreateFiles={this.handleCreateFiles}
+                    onMoveFolder={this.handleRenameFolder}
+                    onMoveFile={this.handleRenameFile}
+                    onRenameFolder={this.handleRenameFolder}
+                    onRenameFile={this.handleRenameFile}
+                    onDeleteFolder={this.handleDeleteFolder}
+                    onDeleteFile={this.handleDeleteFile}
                 />
             </div>
         );
-        // return (
-        //     <div id={id}>
-        //         <div
-        //             onChange={this.handleChange}
-        //             {...omit(['setProps'], this.props)}
-        //         />
-        //         <p>Component works</p>
-        //         <p>{JSON.stringify(this.props)}</p>
-        //     </div>
-        // );
     }
 }
 

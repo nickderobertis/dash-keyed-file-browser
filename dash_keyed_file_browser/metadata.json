@@ -4,12 +4,96 @@
     "displayName": "KeyedFileBrowser",
     "methods": [
       {
-        "name": "handleChange",
+        "name": "setFiles",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "event",
+            "name": "files",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleCreateFolder",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "key",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleCreateFiles",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "files",
+            "type": null
+          },
+          {
+            "name": "prefix",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleRenameFolder",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "oldKey",
+            "type": null
+          },
+          {
+            "name": "newKey",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleRenameFile",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "oldKey",
+            "type": null
+          },
+          {
+            "name": "newKey",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleDeleteFolder",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "folderKey",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleDeleteFile",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "fileKey",
             "type": null
           }
         ],
