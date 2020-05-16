@@ -98,6 +98,42 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "handleSelectFile",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "file",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handlePreviewOpen",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "file",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handlePreviewClose",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "file",
+            "type": null
+          }
+        ],
+        "returns": null
       }
     ],
     "props": {
@@ -252,6 +288,48 @@
       "detailRendererProps": {
         "type": {
           "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "selectedFile": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "key": {
+              "name": "string",
+              "required": false
+            },
+            "size": {
+              "name": "number",
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "openFile": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "key": {
+              "name": "string",
+              "required": false
+            },
+            "size": {
+              "name": "number",
+              "required": false
+            }
+          }
         },
         "required": false,
         "description": "",

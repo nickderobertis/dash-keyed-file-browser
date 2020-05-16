@@ -28,11 +28,7 @@ const defaultFuncProps = {
     sort: Sorters.SortByName,
 
     onSelect: (fileOrFolder) => {}, // Always called when a file or folder is selected
-    onSelectFile: (file) => {}, //    Called after onSelect, only on file selection
     onSelectFolder: (folder) => {}, //    Called after onSelect, only on folder selection
-
-    onPreviewOpen: (file) => {}, // File opened
-    onPreviewClose: (file) => {}, // File closed
 
     onFolderOpen: (folder) => {}, // Folder opened
     onFolderClose: (folder) => {}, // Folder closed
@@ -175,13 +171,24 @@ export default class KeyedFileBrowser extends Component {
         });
     };
 
+    handleSelectFile = (file) => {
+        console.log('handling selected file');
+        this.props.setProps({selectedFile: file});
+    };
+
+    handlePreviewOpen = (file) => {
+        this.props.setProps({openFile: file});
+    };
+
+    handlePreviewClose = (file) => {
+        this.props.setProps({openFile: {}});
+    };
+
     render() {
         const {id} = this.props;
 
         return (
             <div id={id}>
-                <p>Component works</p>
-                <p>{JSON.stringify(this.props)}</p>
                 <FileBrowser
                     files={this.state.files}
                     icons={Icons.FontAwesome(4)}
@@ -195,6 +202,9 @@ export default class KeyedFileBrowser extends Component {
                     onRenameFile={this.handleRenameFile}
                     onDeleteFolder={this.handleDeleteFolder}
                     onDeleteFile={this.handleDeleteFile}
+                    onSelectFile={this.handleSelectFile}
+                    onPreviewOpen={this.handlePreviewOpen}
+                    onPreviewClose={this.handlePreviewClose}
                 />
             </div>
         );
@@ -216,11 +226,11 @@ KeyedFileBrowser.defaultProps = {
     fileRendererProps: {},
     folderRendererProps: {},
     detailRendererProps: {},
+
+    selectedFile: {},
+    openFile: {},
 };
 
-/**
- * Was not working until I copied the propTypes rather than referenced them
- */
 KeyedFileBrowser.propTypes = {
     files: PropTypes.array.isRequired,
     id: PropTypes.string,
@@ -246,4 +256,10 @@ KeyedFileBrowser.propTypes = {
     fileRendererProps: PropTypes.object,
     folderRendererProps: PropTypes.object,
     detailRendererProps: PropTypes.object,
+
+    selectedFile: PropTypes.shape({
+        key: PropTypes.string,
+        size: PropTypes.number,
+    }),
+    openFile: PropTypes.shape({key: PropTypes.string, size: PropTypes.number}),
 };

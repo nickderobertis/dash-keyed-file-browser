@@ -14,7 +14,8 @@ dkfbKeyedFileBrowser(files=NULL, id=NULL, actions=NULL, showActionBar=NULL,
 canFilter=NULL, noFilesMessage=NULL, nestChildren=NULL,
 renderStyle=NULL, startOpen=NULL, headerRendererProps=NULL,
 filterRendererProps=NULL, fileRendererProps=NULL,
-folderRendererProps=NULL, detailRendererProps=NULL)
+folderRendererProps=NULL, detailRendererProps=NULL,
+selectedFile=NULL, openFile=NULL)
 }
 
 \arguments{
@@ -45,6 +46,16 @@ folderRendererProps=NULL, detailRendererProps=NULL)
 \item{folderRendererProps}{Named list. }
 
 \item{detailRendererProps}{Named list. }
+
+\item{selectedFile}{Lists containing elements 'key', 'size'.
+those elements have the following types:
+  - key (character; optional)
+  - size (numeric; optional). }
+
+\item{openFile}{Lists containing elements 'key', 'size'.
+those elements have the following types:
+  - key (character; optional)
+  - size (numeric; optional). }
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}
